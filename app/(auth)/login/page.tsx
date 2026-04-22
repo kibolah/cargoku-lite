@@ -21,10 +21,12 @@ export default function LoginPage() {
     // LOGIKA POV SESUAI PERMINTAAN
     if (identifier === "admin@cargoku.com" && password === "12") {
       localStorage.setItem("userRole", "Admin");
-      router.push("/dashboard");
+      router.push("/admin/dashboard"); // Berubah jadi /admin/dashboard
     } else if (identifier === "user@gmail.com" && password === "12") {
       localStorage.setItem("userRole", "Pelanggan");
-      router.push("/dashboard");
+      // Nanti ini kita ubah juga kalau kamu udah bikin folder /user/dashboard
+      // Tapi sementara biarin lari ke admin dulu aja nggak apa-apa biar nggak error
+      router.push("/user/dashboard"); 
     } else {
       alert("Email atau Password salah! \nAdmin: admin@cargoku.com \nUser: user@gmail.com \nPass: 12");
     }
